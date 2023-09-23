@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/file">
+        <file>style.qss</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>staticFile/images/bg.png</file>
+        <file>staticFile/images/btn_qd.png</file>
+        <file>staticFile/images/btn_qd_pre.png</file>
+        <file>staticFile/images/btn_rcljk.png</file>
+        <file>staticFile/images/btn_rcljk_pre.png</file>
+        <file>staticFile/images/btn_ssjc.png</file>
+        <file>staticFile/images/btn_ssjc_pre.png</file>
+        <file>staticFile/images/btn_zt.png</file>
+        <file>staticFile/images/btn_zt_pre.png</file>
+        <file>staticFile/images/img_01.png</file>
+        <file>staticFile/images/img_02.png</file>
+        <file>staticFile/images/img_03.png</file>
+        <file>staticFile/images/img_04_old.png</file>
+        <file>staticFile/images/img_05.png</file>
+        <file>staticFile/images/img_06.png</file>
+        <file>staticFile/images/img_07.png</file>
+        <file>staticFile/images/img_08.png</file>
+        <file>staticFile/images/icon_01.png</file>
+        <file>staticFile/images/icon_02.png</file>
+        <file>staticFile/images/icon_03.png</file>
+        <file>staticFile/images/icon_04.png</file>
+        <file>staticFile/images/icon_bg.png</file>
+        <file>staticFile/images/icon_bg_pre.png</file>
+        <file>staticFile/images/img_9.png</file>
+        <file>staticFile/images/img_10.png</file>
+        <file>staticFile/dyzgt2.0.ttf</file>
+        <file>staticFile/images/icon_05.png</file>
+        <file>staticFile/images/icon_05_pre.png</file>
+        <file>staticFile/images/img_04_new_1.png</file>
+        <file>staticFile/images/img_04_new_2.png</file>
+    </qresource>
+</RCC>

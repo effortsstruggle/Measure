@@ -1,0 +1,331 @@
+
+/*------公共样式------*/
+/* 全局样式 */
+
+/* 头部导航按钮基础样式 */
+#main_nameLab{
+    font-size: 32px;
+    color: #EFF7FE;
+    padding-left:20;
+    padding-top:16;
+}
+
+#main_butGroup{
+    padding-top:18;
+}
+
+#main_actualTimeBut{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_ssjc.png);
+}
+#main_softMeasureBut{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_rcljk.png);
+}
+
+#main_actualTimeBut[click=true]{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_ssjc_pre.png);
+}
+#main_softMeasureBut[click=true]{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_rcljk_pre.png);
+}
+
+#main_runBut{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_qd.png);
+}
+#main_stopBut{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_zt.png);
+}
+
+#main_runBut[click=true]{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_qd_pre.png);
+}
+#main_stopBut[click=true]{
+    background:transparent;
+    background-image:url(:/staticFile/images/btn_zt_pre.png);
+}
+
+
+
+
+/*------------实时监测页面样式---------------*/
+/*取消QTabWidget的白色背景*/
+#actual_tab::pane{
+    border:none;
+}
+#actual_tab QStackedWidget{
+    background: transparent;
+}
+
+#actual_tab QTabBar::tab
+{
+    /*background-color: #0B0E11;*/
+    background: transparent;
+    border :1px solid RGB(39,55,108);
+    font-family:Consolas;    /*设置tab中的文本的字体*/
+    font-size:13pt;
+    color:#ced4da;    /*设置tab中的文本的颜色*/
+    border-radius: 5px;    /*设置tab的边框的圆角（左上圆角）*/
+    /*border-top-right-radius: 5px;    设置tab的边框的圆角（右上圆角）*/
+    min-width: 100px;
+    min-height: 25px;
+    padding: 5px;
+    margin-left: 20px;/*设置tab的间距*/
+}
+#actual_tab QTabBar::tab:selected
+{
+    background-color: rgb(108, 117, 125, 65);
+}
+
+
+#actual_parameterWid{
+    background-color: rgba(56,201,255,0.1);
+    border:1px solid rgba(56,201,255,0.8);
+}
+
+#actual_parName{
+    font-size: 16px;
+    line-height: 55px;
+    color: #ffffff;
+    padding-bottom:4px;
+}
+#actual_parValue{
+    font-size: 18px;
+    line-height: 55px;
+    color: #FFF838;
+}
+#actual_parUnit{
+    font-size: 14px;
+    color: #FFF838;
+    padding-bottom:4px;
+    padding-right:4;
+
+}
+
+#actual_labelLsgzlxs{
+    font-size: 15px;
+    color:#FFFFFF;
+}
+#actual_label_lsbText1{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_lsbText2{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_lsbpqfText1{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_lsbpqfText2{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_flsqjlfText{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_zlsqjlfText{
+font-size: 17px;
+color:#FFFFFF;
+}
+#actual_label_cyqyltjfText{
+font-size: 17px;
+color:#FFFFFF;
+}
+
+#actual_condenserText{
+    font-size: 20px;
+    line-height: 55px;
+    color: #ffffff;
+}
+
+#actual_options{
+    background-color: rgba(98,137,192,0.1);
+    border:1px solid rgba(98,137,192,0.4);
+    font-size: 16px;
+    color: #ffffff;
+    padding-left:12px;
+}
+/*主窗体点击按钮背景*/
+QComboBox::drop-down {
+    border:0;
+    background-image:url(:/staticFile/images/icon_05.png);
+    width:30px;
+}
+QComboBox QAbstractItemView {
+    padding-left:12;
+    outline: 1px solid rgba(98,137,192,0.4);/*选中项外边框*/
+    selection-background-color:rgba(98,137,192,0.4);/* 选中项的背景色 */
+    border: 1px solid rgba(98,137,192,0.1);/* 整个下拉窗体的边框 */
+    background-color: #6289c0; /* 整个下拉窗体的背景色 */
+    selection-color: #ffffff;/*下拉框选中项字体颜色*/
+}
+
+
+/*------------软测量监控页面样式---------------*/
+
+/*取消QTabWidget的白色背景*/
+#soft_tab::pane{
+    border:none;
+}
+#soft_tab QStackedWidget{
+    background: transparent;
+}
+
+#soft_tab QTabBar::tab
+{
+    /*background-color: #0B0E11;*/
+    background: transparent;
+    border :1px solid RGB(39,55,108);
+    font-family:Consolas;    /*设置tab中的文本的字体*/
+    font-size:13pt;
+    color:#ced4da;    /*设置tab中的文本的颜色*/
+    border-radius: 5px;    /*设置tab的边框的圆角（左上圆角）*/
+    /*border-top-right-radius: 5px;    设置tab的边框的圆角（右上圆角）*/
+    min-width: 100px;
+    min-height: 25px;
+    padding: 5px;
+    margin-left: 20px;/*设置tab的间距*/
+}
+#soft_tab QTabBar::tab:selected
+{
+    background-color: rgb(108, 117, 125, 65);
+}
+
+
+#soft_modelWid{
+    background-color: rgba(12,17,26,0.4);
+    border:1px solid rgba(66,92,129,0.4);
+}
+
+#soft_type{
+    padding:4 9 4 9;
+    background-color: rgba(172,203,238,0.3);
+    border:1px solid #909090;
+    font-size: 16px;
+    color: #b8daff;
+}
+
+#soft_paraValue{
+    background-color: rgba(53,192,243,0.1);
+    border:1px solid rgba(53,192,243,0.8);
+}
+
+#soft_parameter{
+    font-size: 16px;
+    line-height: 55px;
+    color: #ffffff;
+    padding-left:4;
+
+}
+#soft_value{
+    font-size: 16px;
+    line-height: 55px;
+    color:#E9E539;
+    padding:4px;
+
+}
+#soft_unit{
+    font-size: 14px;
+    color:#E9E539;
+    padding-bottom:4px;
+    padding-right:4;
+}
+
+#soft_modelName{
+    background-color: rgba(172,203,238,0.1);
+    border: 1px solid rgba(184,217,255,0.8);
+}
+#soft_icon{
+    background:transparent;
+}
+
+QPushButton#soft_icon_1
+{
+    background-color: rgba(0,0,0,0);
+}
+#soft_name1{
+    font-size: 20px;
+    line-height: 28px;
+    color:#84cbff;
+}
+
+#soft_modelOut{
+    background-color: rgba(53,192,243,0.1);
+    border:1px solid rgba(53,192,243,0.8);
+}
+#soft_outText{
+    color: #ffffff;
+    font-size: 16px;
+    background-color: rgba(48,172,218,0.8);
+}
+#soft_outValue{
+    font-size: 18px;
+    color:#E9E539;
+    padding-top:4px;
+}
+#soft_outUnit{
+    font-size: 16px;
+    color:#E9E539;
+    padding-bottom:4px;
+}
+
+/*------------消息弹窗页面样式---------------*/
+#msg_mainWid{
+    background-color: #16203d;
+}
+
+#msg_titleWid{
+    background-color: #2e4279;
+}
+#msg_title{
+    font-size: 16px;
+    color: #ffffff;
+    background:transparent;
+    padding:12 0 12 20;
+}
+#msg_closeBut{
+    background:transparent;
+}
+
+#msg_parName{
+    font-size: 16px;
+    color: #ffffff;
+    padding-top:24;
+}
+#msg_parValue{
+    height: 34px;
+    background-color: rgba(184,218,255,0.1);
+    border:1px solid rgba(184,218,255,0.8);
+    font-size: 19px;
+    line-height: 55px;
+    color: #E9E539;
+    padding-left:12;
+}
+
+
+
+#msg_butGroup{
+    border-top:1px solid rgba(184,218,255,0.2);
+}
+#msg_defineBut{
+    height: 30px;
+    background:#6289c0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+}
+#msg_cancelBut{
+    height: 30px;
+    background: #35c0f3;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #0b2934;
+}
