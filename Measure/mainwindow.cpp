@@ -114,14 +114,20 @@ void MainWindow::initGUI()
     header->setMaximumHeight(100);
     header->setMinimumHeight(100);
     QHBoxLayout *headLayout = new QHBoxLayout(header);
-    //    headLayout->setContentsMargins(0,0,0,0);
-    headLayout->setContentsMargins(0,0,120,10);
+        headLayout->setContentsMargins(0,0,0,0);
+//    headLayout->setContentsMargins(0,0,120,10);
     headLayout->setSpacing(0);
 
     // 名称
+    QWidget *programNameWidget = new QWidget;
+    programNameWidget->setObjectName("main_programNameWidget");
+
+    QHBoxLayout *programNameLayout = new QHBoxLayout(programNameWidget);
+    programNameLayout->setContentsMargins(20,0,0,25);
+//    programNameLayout->setObjectName("main_programNameLayout");
+
     QLabel *nameLab = new QLabel;
     nameLab->setText("软测量程序");
-    nameLab->setAlignment(Qt::AlignLeft);
     nameLab->setMaximumWidth(741);
     nameLab->setObjectName("main_nameLab");
     // 设置名称使用本地字体
@@ -132,16 +138,17 @@ void MainWindow::initGUI()
         QFont font(msyh);
         nameLab->setFont(font);
     }
+    programNameLayout->addWidget(nameLab);
 
 
     /* 页面切换按钮组 */
-    QWidget *butGroup = new QWidget;
-    butGroup->setObjectName("main_butGroup");
-    QHBoxLayout *butGroupLayout = new QHBoxLayout( butGroup );
-    //    butGroupLayout->setContentsMargins(0,0,0,0);
-    butGroupLayout->setContentsMargins(80,0,0,0);
+    QWidget *btnGroupWidget = new QWidget;
+    btnGroupWidget->setObjectName("main_btnGroupWidget");
+
+    QHBoxLayout *butGroupLayout = new QHBoxLayout( btnGroupWidget );
+    butGroupLayout->setContentsMargins(0,0,0,0);
     butGroupLayout->setSpacing(27);
-    butGroupLayout->setAlignment(Qt::AlignLeft);
+
 
     // 实时监测按钮
     this->m_actualTimeButton = new QPushButton;
@@ -155,39 +162,34 @@ void MainWindow::initGUI()
     this->m_softMeasureButton->setMaximumWidth(168);
     this->m_softMeasureButton->setMinimumHeight(36);
     this->m_softMeasureButton->setObjectName("main_softMeasureBut");
+    QSpacerItem *hSpace = new QSpacerItem(40 , 20 , QSizePolicy::Policy::Expanding);
 
     butGroupLayout->addWidget(this->m_actualTimeButton);
-    butGroupLayout->setStretchFactor(this->m_actualTimeButton,1);
+    butGroupLayout->setStretchFactor(this->m_actualTimeButton,2);
     butGroupLayout->addWidget(this->m_softMeasureButton);
-    butGroupLayout->setStretchFactor(this->m_softMeasureButton,3);
+    butGroupLayout->setStretchFactor(this->m_softMeasureButton,2);
+    butGroupLayout->addItem(hSpace);
 
 
+    /* 页面切换按钮组 */
+    QWidget *btnCloseWidget = new QWidget;
+    btnCloseWidget->setObjectName("main_btnCloseWidget");
 
-    //    QWidget *butCloseGroup = new QWidget;
-    //    QGridLayout *butCloseLayout = new QGridLayout( butCloseGroup );
-    ////    QSpacerItem *hSpacer = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Expanding ); //水平弹簧
-    ////    QSpacerItem *hSpacer2 = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Expanding ); //水平弹簧
-    //    QSpacerItem *vSpacer = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Ignored ,  QSizePolicy::Policy::Expanding); //垂直弹簧
-
-
-
-    ////    butCloseLayout->addItem(hSpacer , 0 , 0);
-    //    butCloseLayout->addWidget(this->m_closeBtn , 0 , 1);
-    ////    butCloseLayout->addItem(hSpacer2 , 0 , 2);
-    //    butCloseLayout->addItem(vSpacer , 1 , 0);
-
+    QHBoxLayout *btnCloseLayout = new QHBoxLayout( btnCloseWidget );
+    btnCloseLayout->setContentsMargins(245,0,0,60);
     this->m_closeBtn = new QPushButton;
     this->m_closeBtn->setObjectName("main_closeBtn");
-    this->m_closeBtn->setMaximumWidth(80);
+    this->m_closeBtn->setMaximumWidth(30);
     this->m_closeBtn->setMinimumHeight(30);
+    btnCloseLayout->addWidget(this->m_closeBtn);
 
     // 头部布局
-    headLayout->addWidget(nameLab);
-    headLayout->setStretchFactor(nameLab,5);
-    headLayout->addWidget(butGroup);
-    headLayout->setStretchFactor(butGroup,8);
-    headLayout->addWidget(this->m_closeBtn);
-    headLayout->setStretchFactor(this->m_closeBtn,1);
+    headLayout->addWidget(programNameWidget);
+    headLayout->setStretchFactor(programNameWidget,4);
+    headLayout->addWidget(btnGroupWidget);
+    headLayout->setStretchFactor(btnGroupWidget,4);
+    headLayout->addWidget(btnCloseWidget);
+    headLayout->setStretchFactor(btnCloseWidget,2);
 
 
 

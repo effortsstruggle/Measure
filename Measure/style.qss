@@ -2,16 +2,17 @@
 /* 全局样式 */
 
 /* 头部导航按钮基础样式 */
+#main_programNameWidget
+{
+}
+
 #main_nameLab{
     font-size: 32px;
     color: #EFF7FE;
-    padding-left:20px;
-    padding-top:16px;
 }
 
-#main_butGroup{
-/*    padding-top:100px;*/
-/*    margin-left:500px;*/
+#main_btnGroupWidget{
+
 }
 
 #main_actualTimeBut{
@@ -50,14 +51,15 @@
     background-image:url(:/staticFile/images/btn_zt_pre.png);
 }
 
+#main_btnCloseWidget{
+
+}
+
+
 #main_closeBtn
 {
    background:transparent;
-   background-image:url(:/staticFile/images/btn_zt.png);
-/*   max-width:55px;
-   min-width:55px;
-   max-height:30px;
-   margin-right:120px;*/
+   background-image:url(:/staticFile/images/icon_bg_pre.png);
 }
 
 
