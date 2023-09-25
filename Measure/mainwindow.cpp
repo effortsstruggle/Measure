@@ -114,7 +114,8 @@ void MainWindow::initGUI()
     header->setMaximumHeight(100);
     header->setMinimumHeight(100);
     QHBoxLayout *headLayout = new QHBoxLayout(header);
-    headLayout->setContentsMargins(0,0,120,0);
+    //    headLayout->setContentsMargins(0,0,0,0);
+    headLayout->setContentsMargins(0,0,120,10);
     headLayout->setSpacing(0);
 
     // 名称
@@ -137,7 +138,8 @@ void MainWindow::initGUI()
     QWidget *butGroup = new QWidget;
     butGroup->setObjectName("main_butGroup");
     QHBoxLayout *butGroupLayout = new QHBoxLayout( butGroup );
-    butGroupLayout->setContentsMargins(120,0,0,0);
+    //    butGroupLayout->setContentsMargins(0,0,0,0);
+    butGroupLayout->setContentsMargins(80,0,0,0);
     butGroupLayout->setSpacing(27);
     butGroupLayout->setAlignment(Qt::AlignLeft);
 
@@ -153,9 +155,6 @@ void MainWindow::initGUI()
     this->m_softMeasureButton->setMaximumWidth(168);
     this->m_softMeasureButton->setMinimumHeight(36);
     this->m_softMeasureButton->setObjectName("main_softMeasureBut");
-
-
-
 
     butGroupLayout->addWidget(this->m_actualTimeButton);
     butGroupLayout->setStretchFactor(this->m_actualTimeButton,1);
@@ -188,7 +187,7 @@ void MainWindow::initGUI()
     headLayout->addWidget(butGroup);
     headLayout->setStretchFactor(butGroup,8);
     headLayout->addWidget(this->m_closeBtn);
-    headLayout->setStretchFactor(this->m_closeBtn,2);
+    headLayout->setStretchFactor(this->m_closeBtn,1);
 
 
 
