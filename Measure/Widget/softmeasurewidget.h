@@ -37,7 +37,7 @@ public:
             // 参数块
             QWidget *paraValue = new QWidget;
             paraValue->setMaximumHeight(34);
-            paraValue->setObjectName("soft_paraValue");
+            paraValue->setObjectName("soft_paraWidget");
             QHBoxLayout *paraValueLayout = new QHBoxLayout(paraValue);
             paraValueLayout->setContentsMargins(2,2,2,2);
             paraValueLayout->setSpacing(0);
@@ -52,8 +52,9 @@ public:
             // 参数值
             value1 = new QLineEdit;
             value1->setText(paras[i][3]);
-            value1->setObjectName("msg_parValue");
-            value1->setMinimumWidth(90);
+            value1->setObjectName("soft_parValue");
+//            value1->setMinimumWidth(90);
+//            value1->setMinimumWidth(90);
             value1->setAlignment(Qt::AlignLeft);
             /************进行槽连接***************/
             QObject::connect(value1,&QLineEdit::returnPressed,this,[=](){

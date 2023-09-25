@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     QFile qssFile(":/file/style.qss");
     if(qssFile.open(QFile::ReadOnly)){
         QString styleSheet = QLatin1String(qssFile.readAll());
+        qDebug()<<"styleSheet: "<< styleSheet ;
         qApp->setStyleSheet(styleSheet);
         qssFile.close();
         //        qDebug()<< "QSS file load success";

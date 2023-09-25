@@ -1,4 +1,3 @@
-
 /*------公共样式------*/
 /* 全局样式 */
 
@@ -86,25 +85,29 @@
 #actual_parameterWid{
     background-color: rgba(56,201,255,0.1);
     border:1px solid rgba(56,201,255,0.8);
+    max-width: 200px;
 }
 
 #actual_parName{
     font-size: 16px;
     line-height: 55px;
-    color: #ffffff;
-    padding-bottom:4px;
-}
-#actual_parValue{
-    font-size: 18px;
-    line-height: 55px;
     color: #FFF838;
+}
+#actual_parValue
+{
+/*    background-color: rgba(184,218,255,0.1);
+    border:1px solid rgba(184,218,255,0.8);*/
+    font-size: 16px;
+/*    min-width:65px;*/
+/*    min-height:25px;*/
+/*    min-width:70px;*/
+/*    max-width:12px;*/
+    color: #E9E539;
 }
 #actual_parUnit{
-    font-size: 14px;
+    font-size: 16px;
     color: #FFF838;
-    padding-bottom:4px;
-    padding-right:4;
-
+    line-height: 55px;
 }
 
 #actual_labelLsgzlxs{
@@ -153,6 +156,7 @@ color:#FFFFFF;
     color: #ffffff;
     padding-left:12px;
 }
+
 /*主窗体点击按钮背景*/
 QComboBox::drop-down {
     border:0;
@@ -213,7 +217,7 @@ QComboBox QAbstractItemView {
     color: #b8daff;
 }
 
-#soft_paraValue{
+#soft_paraWidget{
     background-color: rgba(53,192,243,0.1);
     border:1px solid rgba(53,192,243,0.8);
 }
@@ -223,8 +227,22 @@ QComboBox QAbstractItemView {
     line-height: 55px;
     color: #ffffff;
     padding-left:4;
-
 }
+
+#soft_parValue
+{
+    height: 34px;
+    background-color: rgba(184,218,255,0.1);
+    border:1px solid rgba(184,218,255,0.8);
+    font-size: 19px;
+    line-height: 55px;
+    min-width:90px;
+    max-width:90px;
+/*    max-width:500px;*/
+    color: #E9E539;
+/*    padding-left:12;*/
+}
+
 #soft_value{
     font-size: 16px;
     line-height: 55px;
@@ -247,10 +265,11 @@ QComboBox QAbstractItemView {
     background:transparent;
 }
 
-QPushButton#soft_icon_1
+/*QPushButton#soft_icon_1
 {
     background-color: rgba(0,0,0,0);
-}
+}*/
+
 #soft_name1{
     font-size: 20px;
     line-height: 28px;

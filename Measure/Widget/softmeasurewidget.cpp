@@ -1,4 +1,4 @@
-﻿#include "softmeasurewidget.h"
+#include "softmeasurewidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -96,7 +96,7 @@ void SoftMeasureWidget::initGUI()
     this->m_parmodelList.insert( PARMODELWIDGETFLAG::FLSJLF , parmodel_flsjltjf);
 
     /************添加子块3：除氧器调节阀*****************/
-    QList<QList<QString>> paras_cyqtjf = {{"kd","DCS通讯","开度","45","%"},
+    QList<QList<QString>> paras_cyqtjf = {{"kd","DCS通讯","开度","45.00","%"},
                                           {"fqyl","DCS通讯","阀前压力","21","kPa"},
                                           {"fhyl","DCS通讯","阀后压力","15","kPa"}};
     QList<QString> names_cyqtjf = {"img_07.png", this->m_cyqyltjfName };
@@ -430,7 +430,7 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
     case PARMODELWIDGETFLAG::ZLSJLF : //设置“主凝水节流阀”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',2));
         pParmodel->setParasValue("fqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("fhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -439,13 +439,13 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double Qliq = KV*0.1* (sqrt(DP/1));
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::FLSJLF : //设置“辅凝水节流阀”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',2));
         pParmodel->setParasValue("fqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("fhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -454,13 +454,13 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double Qliq = KV*0.1* (sqrt(DP/1));
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::CYQYLTJF : // 设置“除氧器调节阀”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',2));
         pParmodel->setParasValue("fqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("fhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -474,13 +474,13 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double QGAS = 3.16 * KV * (1 - XX / (3 * XCHOCK)) * pow((DP * v1.toDouble()), 0.5) / 1000.0;
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(QGAS,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(QGAS,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::LSB_1: // 设置“水泵流量”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("zs_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("zs_soft_value" , QString::number(value_1,'f',0));
         pParmodel->setParasValue("bqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("bhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -488,13 +488,13 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double Qf = value_1 * v3  * v3 + value_2 * v3 + value_3;
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(Qf,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qf,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::LSB_2: // 设置“凝水泵流量”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("zs_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("zs_soft_value" , QString::number(value_1,'f',0));
         pParmodel->setParasValue("bqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("bhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -502,13 +502,13 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double Qf = value_1 * v3  * v3 + value_2 * v3 + value_3;
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(Qf,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qf,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::LSBQLJPQF_1: //设置“调节阀”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',2));
         pParmodel->setParasValue("fqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("fhyl_soft_value" , QString::number(value_3,'f',3));
 
@@ -517,22 +517,20 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         double Qliq = KV*0.1* (sqrt(DP/1));
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::LSBQLJPQF_2: //设置“汽轮机配汽阀”计算结果
     {
         //计算结果
-        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',3));
+        pParmodel->setParasValue("kd_soft_value" , QString::number(value_1,'f',2));
         pParmodel->setParasValue("fqyl_soft_value" , QString::number(value_2,'f',3));
         pParmodel->setParasValue("fhyl_soft_value" , QString::number(value_3,'f',3));
 
         double KV = (value_1 / 100) * 2.6944 + 0.6612 + 0.018;
         double DP = (value_2 - value_3 ) * 1000;
         double Qliq = KV*0.1* (sqrt(DP/1));
-
-
-        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(Qliq,'f',2));
     }
         break;
     case PARMODELWIDGETFLAG::LSG: //设置“管道阻力”计算结果
@@ -549,7 +547,7 @@ void SoftMeasureWidget::updataGUI( PARMODELWIDGETFLAG index , double value_1 , d
         //     parmodel_gdzl->setResultValue("soft_outValue",QString::number(RDP,'f',2));
 
 
-        pParmodel->setResultValue("soft_outValue",QString::number(zeta,'f',3));
+        pParmodel->setResultValue("soft_outValue",QString::number(zeta,'f',2));
     }
         break;
     default:

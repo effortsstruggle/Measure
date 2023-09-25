@@ -15,9 +15,7 @@
 #include <QTimer>
 #include <QLabel>
 #include <QHBoxLayout>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
+#include <QGridLayout>
 #include "softmeasurewidget.h"
 
 
@@ -29,37 +27,41 @@ public:
         /* 参数行 */
         //        QWidget *parameterWid = new QWidget(this);
         this->setObjectName("actual_parameterWid");
-        this->setMaximumWidth(200);
-        QHBoxLayout *parWidLayout = new QHBoxLayout( this );
-        parWidLayout->setContentsMargins(10,10,10,0);
-        parWidLayout->setSpacing(0);
+
+        QGridLayout *parWidLayout = new QGridLayout( this );
+       parWidLayout->setContentsMargins(2,2,2,2);
+        //parWidLayout->setSpacing(0);
+
+        parWidLayout->setColumnStretch(0,2);
+        parWidLayout->setColumnStretch(1,3);
+        parWidLayout->setColumnStretch(2,1);
 
         // 参数名
         parName = new QLabel;
-        parName->setAlignment(Qt::AlignVCenter);
+        parName->setAlignment(Qt::AlignCenter);
         parName->setObjectName("actual_parName");
         parName->setText(name);
 
         // 参数值
         parValue = new QLabel;
-        parValue->setAlignment(Qt::AlignLeft);
-//        parValue->setAlignment(Qt::AlignHCenter);
+        parValue->setAlignment(Qt::AlignCenter);
+        //        parValue->setAlignment(Qt::AlignHCenter);
         parValue->setObjectName("actual_parValue");
         parValue->setText(value);
 
         // 参数单位
         parUnit = new QLabel;
-        //    parUnit->setAlignment(Qt::AlignLeft);
-        parUnit->setAlignment(Qt::AlignBottom);
+        parUnit->setAlignment(Qt::AlignCenter);
         parUnit->setObjectName("actual_parUnit");
         parUnit->setText(unit);
 
         parWidLayout->addWidget(parName);
-        parWidLayout->setStretchFactor(parName,2);
         parWidLayout->addWidget(parValue);
-        parWidLayout->setStretchFactor(parValue,3);
         parWidLayout->addWidget(parUnit);
-        parWidLayout->setStretchFactor(parUnit,1);
+        //        parWidLayout->addWidget(parValue);
+        //        parWidLayout->setStretchFactor(parValue,3);
+        //        parWidLayout->addWidget(parUnit);
+        //        parWidLayout->setStretchFactor(parUnit,1);
 
     }
     void setValue(QString text)
@@ -86,7 +88,7 @@ public:
                               QString lsbqlj_name_2 , QString lsgzlxs ,
                               QWidget *parent = nullptr);
 
-    QWidget* CreateParWid(QString name,QString value,QString unit);
+//    QWidget* CreateParWid(QString name,QString value,QString unit);
     void initGUI();
 
     void ControlButClick(QString name);

@@ -1,4 +1,4 @@
-﻿#include "actualtimewidget.h"
+#include "actualtimewidget.h"
 #include <QCoreApplication>
 #include <QWidget>
 #include <QVBoxLayout>
@@ -94,8 +94,6 @@ void ActualTimeWidget::initGUI(){
     this->parameterLsbpqf_1 = new ParWidget("Q","0","t/h",this);
     this->parameterLsbpqf_1->setGeometry(371+165-20,230+35,130,34);
 
-
-
     //凝水泵汽轮机配气阀-2
     QLabel *label_lsbpqfText2 = new QLabel(this);
     label_lsbpqfText2->setObjectName("actual_label_lsbpqfText2");
@@ -149,10 +147,6 @@ void ActualTimeWidget::initGUI(){
     label_cyqyltjfIcon->setGeometry(966+250,57,74,55);
     this->parameterCyqyltjf = new ParWidget("Q","45","t/h",this);
     this->parameterCyqyltjf->setGeometry(940+265,8+5+105,130,34);
-
-
-
-
 
 
     //凝水管阻力系数
@@ -340,46 +334,46 @@ void ActualTimeWidget::initGUI(){
 }
 
 
-/* 生成参数行 */
-QWidget* ActualTimeWidget::CreateParWid(QString name,QString value,QString unit){
-    /* 参数行 */
-    QWidget *parameterWid = new QWidget(this);
-    parameterWid->setObjectName("actual_parameterWid");
-    parameterWid->setMaximumWidth(140);
-    QHBoxLayout *parWidLayout = new QHBoxLayout(parameterWid);
-    parWidLayout->setContentsMargins(10,10,10,0);
-    parWidLayout->setSpacing(0);
+///* 生成参数行 */
+//QWidget* ActualTimeWidget::CreateParWid(QString name,QString value,QString unit){
+//    /* 参数行 */
+//    QWidget *parameterWid = new QWidget(this);
+//    parameterWid->setObjectName("actual_parameterWid");
+//    parameterWid->setMaximumWidth(140);
+//    QHBoxLayout *parWidLayout = new QHBoxLayout(parameterWid);
+//    parWidLayout->setContentsMargins(10,10,10,0);
+//    parWidLayout->setSpacing(0);
 
-    // 参数名
-    QLabel *parName = new QLabel;
-    parName->setAlignment(Qt::AlignVCenter);
-    parName->setObjectName("actual_parName");
-    parName->setText(name);
+//    // 参数名
+//    QLabel *parName = new QLabel;
+//    parName->setAlignment(Qt::AlignVCenter);
+//    parName->setObjectName("actual_parName");
+//    parName->setText(name);
 
-    // 参数值
-    QLabel *parValue = new QLabel;
-    parValue->setAlignment(Qt::AlignVCenter);
-    parValue->setAlignment(Qt::AlignRight);
-    parValue->setObjectName("actual_parValue");
-    parValue->setText(value);
+//    // 参数值
+//    QLabel *parValue = new QLabel;
+//    parValue->setAlignment(Qt::AlignVCenter);
+//    parValue->setAlignment(Qt::AlignRight);
+//    parValue->setObjectName("actual_parValue");
+//    parValue->setText(value);
 
-    // 参数单位
-    QLabel *parUnit = new QLabel;
-    //    parUnit->setAlignment(Qt::AlignLeft);
-    parUnit->setAlignment(Qt::AlignBottom);
-    parUnit->setObjectName("actual_parUnit");
-    parUnit->setText(unit);
+//    // 参数单位
+//    QLabel *parUnit = new QLabel;
+//    //    parUnit->setAlignment(Qt::AlignLeft);
+//    parUnit->setAlignment(Qt::AlignBottom);
+//    parUnit->setObjectName("actual_parUnit");
+//    parUnit->setText(unit);
 
-    parWidLayout->addWidget(parName);
-    parWidLayout->setStretchFactor(parName,2);
-    parWidLayout->addWidget(parValue);
-    parWidLayout->setStretchFactor(parValue,3);
-    parWidLayout->addWidget(parUnit);
-    parWidLayout->setStretchFactor(parUnit,1);
+//    parWidLayout->addWidget(parName);
+//    parWidLayout->setStretchFactor(parName,1);
+//    parWidLayout->addWidget(parValue);
+//    parWidLayout->setStretchFactor(parValue,8);
+//    parWidLayout->addWidget(parUnit);
+//    parWidLayout->setStretchFactor(parUnit,1);
 
-    return parameterWid;
+//    return parameterWid;
 
-}
+//}
 
 //void ActualTimeWidget::init_sql()
 //{
