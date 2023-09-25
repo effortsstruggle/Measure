@@ -49,6 +49,12 @@
     background-image:url(:/staticFile/images/btn_zt_pre.png);
 }
 
+#main_closeBtn
+{
+   background:transparent;
+   background-image:url(:/staticFile/images/btn_zt.png);
+}
+
 
 
 

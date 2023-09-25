@@ -33,5 +33,6 @@
         <file>staticFile/images/icon_05_pre.png</file>
         <file>staticFile/images/img_04_new_1.png</file>
         <file>staticFile/images/img_04_new_2.png</file>
+        <file>staticFile/images/btn_close.png</file>
     </qresource>
 </RCC>

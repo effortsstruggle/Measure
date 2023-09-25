@@ -12,6 +12,7 @@
 #include <QFont>
 #include <QFontDatabase>
 #include <QTabWidget>
+#include <QSpacerItem>
 #include "./Data/modbusdata.h"
 #include "./NetWork/modbustcpserver.h"
 #include "./Widget/actualtimewidget.h"
@@ -32,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     }else{
         qDebug()<< "ERROR:Qss file load error";
     }
+
 
     this->setWindowTitle("软测量程序V1.0");
     this->setMinimumSize(1920,1080);
@@ -65,16 +67,16 @@ MainWindow::~MainWindow()
 /* 页面初始化 */
 void MainWindow::initGUI()
 {
-//    // 开始按钮
-//    runBut = new QPushButton(this);
-//    runBut->setObjectName("main_runBut");
-//    connect(runBut,&QPushButton::clicked,this,[=](){ this->slot_controlButClick("run"); });
-//    runBut->setGeometry(81+1650,2+70,80,30);
-//    // 暂停按钮
-//    stopBut = new QPushButton(this);
-//    stopBut->setObjectName("main_stopBut");
-//    connect(stopBut,&QPushButton::clicked,this,[=](){this->slot_controlButClick("stop");});
-//    stopBut->setGeometry(176+1650,2+70,80,30);
+    //    // 开始按钮
+    //    runBut = new QPushButton(this);
+    //    runBut->setObjectName("main_runBut");
+    //    connect(runBut,&QPushButton::clicked,this,[=](){ this->slot_controlButClick("run"); });
+    //    runBut->setGeometry(81+1650,2+70,80,30);
+    //    // 暂停按钮
+    //    stopBut = new QPushButton(this);
+    //    stopBut->setObjectName("main_stopBut");
+    //    connect(stopBut,&QPushButton::clicked,this,[=](){this->slot_controlButClick("stop");});
+    //    stopBut->setGeometry(176+1650,2+70,80,30);
 
 
     // 添加背景图
@@ -85,20 +87,34 @@ void MainWindow::initGUI()
     // 背景图置于底层
     bgLabel->lower();
 
+    //    //关闭按钮
+    //    this->m_closeBtn = new QPushButton(this);
+    //    this->m_closeBtn->setObjectName("main_closeBtn");
+    //    this->m_closeBtn->setMaximumWidth(80);
+    //    this->m_closeBtn->setMaximumHeight(30);
+    //    this->m_closeBtn->setGeometry(176+1650,2+10,80,30);
+    //    QObject::connect( this->m_closeBtn , &QPushButton::clicked , this , [=](){
+    //        qDebug()<<"111111111111111111111";
+    //        this->close();
+    //    });
+
 
     /* 整体布局 */
     this->m_mainWid = new QWidget;
+    this->setCentralWidget( this->m_mainWid );
+
+    //整体布局
     QVBoxLayout *mainLayout = new QVBoxLayout( this->m_mainWid );
     mainLayout->setContentsMargins(0,0,0,0);
     mainLayout->setSpacing(0);
-    this->setCentralWidget( this->m_mainWid );
+
 
     /* 头部名称与按钮组 */
     QWidget *header = new QWidget;
     header->setMaximumHeight(100);
     header->setMinimumHeight(100);
     QHBoxLayout *headLayout = new QHBoxLayout(header);
-    headLayout->setContentsMargins(0,0,0,0);
+    headLayout->setContentsMargins(0,0,120,0);
     headLayout->setSpacing(0);
 
     // 名称
@@ -121,7 +137,7 @@ void MainWindow::initGUI()
     QWidget *butGroup = new QWidget;
     butGroup->setObjectName("main_butGroup");
     QHBoxLayout *butGroupLayout = new QHBoxLayout( butGroup );
-    butGroupLayout->setContentsMargins(0,0,0,0);
+    butGroupLayout->setContentsMargins(120,0,0,0);
     butGroupLayout->setSpacing(27);
     butGroupLayout->setAlignment(Qt::AlignLeft);
 
@@ -130,7 +146,7 @@ void MainWindow::initGUI()
     this->m_actualTimeButton->setMaximumWidth(148);
     this->m_actualTimeButton->setMinimumHeight(36);
     this->m_actualTimeButton->setObjectName("main_actualTimeBut");
-    this->m_actualTimeButton->setProperty("click", true);
+    this->m_actualTimeButton->setProperty("click", true); //设置默认选中
 
     // 软测量检测按钮
     this->m_softMeasureButton = new QPushButton;
@@ -138,16 +154,43 @@ void MainWindow::initGUI()
     this->m_softMeasureButton->setMinimumHeight(36);
     this->m_softMeasureButton->setObjectName("main_softMeasureBut");
 
+
+
+
     butGroupLayout->addWidget(this->m_actualTimeButton);
     butGroupLayout->setStretchFactor(this->m_actualTimeButton,1);
     butGroupLayout->addWidget(this->m_softMeasureButton);
     butGroupLayout->setStretchFactor(this->m_softMeasureButton,3);
+
+
+
+    //    QWidget *butCloseGroup = new QWidget;
+    //    QGridLayout *butCloseLayout = new QGridLayout( butCloseGroup );
+    ////    QSpacerItem *hSpacer = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Expanding ); //水平弹簧
+    ////    QSpacerItem *hSpacer2 = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Expanding ); //水平弹簧
+    //    QSpacerItem *vSpacer = new QSpacerItem(40 , 20 ,QSizePolicy::Policy::Ignored ,  QSizePolicy::Policy::Expanding); //垂直弹簧
+
+
+
+    ////    butCloseLayout->addItem(hSpacer , 0 , 0);
+    //    butCloseLayout->addWidget(this->m_closeBtn , 0 , 1);
+    ////    butCloseLayout->addItem(hSpacer2 , 0 , 2);
+    //    butCloseLayout->addItem(vSpacer , 1 , 0);
+
+    this->m_closeBtn = new QPushButton;
+    this->m_closeBtn->setObjectName("main_closeBtn");
+    this->m_closeBtn->setMaximumWidth(80);
+    this->m_closeBtn->setMinimumHeight(30);
 
     // 头部布局
     headLayout->addWidget(nameLab);
     headLayout->setStretchFactor(nameLab,5);
     headLayout->addWidget(butGroup);
     headLayout->setStretchFactor(butGroup,8);
+    headLayout->addWidget(this->m_closeBtn);
+    headLayout->setStretchFactor(this->m_closeBtn,2);
+
+
 
     /* 主体部分 */
     this->m_bodyStacked = new QStackedWidget;
@@ -206,9 +249,11 @@ void MainWindow::initGUI()
 
     this->m_bodyStacked->setCurrentIndex(0);
 
+
     /* 整体布局 */
     mainLayout->addWidget(header);
     mainLayout->addWidget( this->m_bodyStacked );
+    //    mainLayout->addWidget( this->m_closeBtn );
 
     return ;
 
@@ -235,6 +280,12 @@ void MainWindow::initConnect()
     //取界面数据放置数据层中
     QObject::connect( this->m_widgetToDataTimer , &QTimer::timeout , this , &MainWindow::slot_widgetToData);
     QObject::connect( this->m_dataToWidgetTimer , &QTimer::timeout , this , &MainWindow::slot_dataToWidget);
+
+
+    QObject::connect( this->m_closeBtn , &QPushButton::clicked , this , [=](){
+        qDebug()<<"111111111111111111111";
+        this->close();
+    });
 }
 
 /* 顶部导航按钮点击事件 */
@@ -253,11 +304,9 @@ void MainWindow::stackedButClick(int index){
 
 
     //应用当前最新样式
-    this->m_actualTimeButton->style()->polish(this->m_actualTimeButton);
-    this->m_softMeasureButton->style()->polish(this->m_softMeasureButton);
-
+    this->m_actualTimeButton->style()->polish( this->m_actualTimeButton );
+    this->m_softMeasureButton->style()->polish( this->m_softMeasureButton );
     return;
-
 }
 
 
@@ -269,6 +318,11 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     this->findChild<QLabel*>("main_bgLabel")->resize( this->size() );
     return;
 }
+
+//void MainWindow::closeEvent(QCloseEvent *event)
+//{
+
+//}
 
 void MainWindow::slot_widgetToData()
 {
@@ -649,6 +703,12 @@ void MainWindow::initModbus()
     this->m_modbusTcpServer = new ModbusTcpServer( this->m_modbusData , "192.102.1.150" , 20502 );
 }
 
+
+//void MainWindow::on_main_closeBtn_clicked()
+//{
+//    qDebug()<<"111111111111111111111";
+//    this->close();
+//}
 
 
 

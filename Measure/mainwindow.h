@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include <QPushButton>
+
 //#include <QtCharts/QLineSeries>
 
 class QTabWidget ;
@@ -11,6 +11,7 @@ class ModbusTcpServer;
 class ModbusData;
 class ActualTimeWidget ;
 class SoftMeasureWidget;
+class QPushButton;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -18,22 +19,24 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-
-
     void initGUI();
     void initData();
     void initConnect();
     void initModbus();
     void stackedButClick(int index);
+public slots:
+//    void on_main_closeBtn_clicked();
 protected:
     virtual void resizeEvent(QResizeEvent *event) override;
+//    virtual void closeEvent( QCloseEvent *event) override;
 private:
     qint8 get_hi_8_bit(qint16 num);
     qint8 get_lo_8_bit(qint16 num);
     float get_float_from_short( short s1 , short s2);
     qint16 get_hi_2_byte( float num );
     qint16 get_lo_2_byte( float num );
+
+
 signals:
     void connectModbus();
     void disconnectModbus();
@@ -47,6 +50,7 @@ private:
 //    QPushButton *runBut;
 //    QPushButton *stopBut;
 
+    QPushButton *m_closeBtn;
 
     ModbusTcpServer *m_modbusTcpServer ; //modbus服务器
 
